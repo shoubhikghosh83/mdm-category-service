@@ -1,5 +1,6 @@
 package com.tcs.ahold.mdm.categoryservice.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,11 @@ public class CategoryService {
 	public Optional<Category> getByCategoryName(String name)
 	{
 		return catrepo.findByCatName(name);
+	}
+	
+	public List<Category> getAllCategory()
+	{
+		return (List<Category>) catrepo.findAll();
 	}
 	
 	public boolean addModifyCategory(String activity, Category cat)

@@ -37,6 +37,14 @@ public class CategoryController {
 				.errorDec("").Result(catsrv.getByCategoryName(name)).build() );
 	}
 	
+	@RequestMapping(value = "/getAllCategory")
+	public ResponseEntity<Response> getAllCategory()
+	{
+		return ResponseEntity.ok(Response.builder().statusCode("200")
+				.errorDec("").Result(catsrv.getAllCategory()).build() );
+	}
+	
+	
 	@RequestMapping(value = "/addModifyCategory", method = RequestMethod.POST)
 	public ResponseEntity<Response> addModifyCategory(@RequestBody Category cat, @RequestParam String activity)
 	{
